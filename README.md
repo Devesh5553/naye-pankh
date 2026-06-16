@@ -74,28 +74,34 @@ A comprehensive, bilingual (English & Hindi) digital portal designed for **NayeP
 
 ```text
 nayep/
-├── server.py               # FastAPI backend with authentication, database loaders, and Gemini AI endpoints
-├── users.json              # Local persistent database file for user profiles
-├── donations.json          # Local persistent database file for donations log
-├── volunteers.json         # Local persistent database file for volunteer signups
-├── bot_logs.json           # Local persistent database file for AI chatbot conversation logs
-├── index.html              # Entrypoint HTML document mapping Google Fonts and FontAwesome
-├── vite.config.js          # Vite compilation and dev-server configuration
-├── package.json            # NPM dependencies and project scripts
-├── src/
-│   ├── main.jsx            # Application entrypoint
-│   ├── App.jsx             # Root React component managing view router and modal sessions
-│   ├── App.css             # Main stylesheet mapping base layouts
-│   ├── index.css           # Global stylesheet mapping colors, utility systems, and responsiveness
-│   ├── translations.js     # Bilingual localization dictionaries (English & Hindi)
-│   └── components/
-│       ├── Header.jsx      # Navigation bar, mobile responsive menu, and language toggles
-│       ├── Footer.jsx      # Portal footer links and legal details
-│       ├── Login.jsx       # Login/Registration forms with front-end validation
-│       ├── Homepage.jsx    # Hero banners, tax calculator, donor tracker, and volunteer quiz sections
-│       ├── AdminPortal.jsx # Administrative console, KPI metrics, database charts, and CSV exporters
-│       ├── ChatbotWidget.jsx # AI floating assistant widget with TTS/STT microphone capabilities
-│       └── LanguageContext.jsx # React context provider for application-wide language translation state
+├── backend/                  # FastAPI backend service
+│   ├── server.py             # FastAPI server with auth, database managers, and Gemini integration
+│   ├── requirements.txt      # Python dependencies list
+│   ├── .env                  # Configuration file for API keys (e.g., GEMINI_API_KEY)
+│   ├── users.json            # Local persistent JSON database for user profiles
+│   ├── donations.json        # Local persistent JSON database for donation records
+│   ├── volunteers.json       # Local persistent JSON database for volunteer match signups
+│   └── bot_logs.json         # Local persistent JSON database for AI chatbot logs
+│
+└── frontend/                 # React frontend application
+    ├── index.html            # Entrypoint HTML document
+    ├── vite.config.js        # Vite build and dev configuration
+    ├── package.json          # Node.js dependencies and run scripts
+    └── src/
+        ├── main.jsx          # React entrypoint
+        ├── App.jsx           # Root application component mapping router state
+        ├── App.css           # Local component styles
+        ├── index.css         # Global design token stylesheets
+        ├── config.js         # API URL configuration matching local backend endpoints
+        ├── translations.js   # Bilingual translation dictionaries (English & Hindi)
+        └── components/
+            ├── Header.jsx    # App header with language selector and interactive links
+            ├── Footer.jsx    # App footer containing credentials and navigation links
+            ├── Login.jsx     # Registration & login flows with form validation
+            ├── Homepage.jsx  # Hero, Tax Calculator, Live tracker, and Volunteer Quiz view components
+            ├── AdminPortal.jsx # Admin dashboard with KPIs, Chart.js trends, bot logs, and CSV downloader
+            ├── ChatbotWidget.jsx # AI chat widget with Web Speech API integration (STT/TTS support)
+            └── LanguageContext.jsx # Language toggle context provider
 ```
 
 ---
@@ -112,11 +118,15 @@ Follow these steps to run both the backend API and frontend Vite dev servers loc
 
 ### Step 1: Backend Setup (FastAPI)
 
-1. Navigate to the root directory and create a Python virtual environment:
+1. Navigate to the `backend/` directory:
+   ```bash
+   cd backend
+   ```
+2. Create a Python virtual environment:
    ```powershell
    python -m venv venv
    ```
-2. Activate the virtual environment:
+3. Activate the virtual environment:
    *   **Windows (PowerShell):**
        ```powershell
        .\venv\Scripts\Activate.ps1
@@ -125,16 +135,16 @@ Follow these steps to run both the backend API and frontend Vite dev servers loc
        ```bash
        source venv/bin/activate
        ```
-3. Install the required Python packages:
+4. Install the required Python packages:
    ```bash
-   pip install fastapi uvicorn pydantic google-genai
+   pip install -r requirements.txt
    ```
-4. Create a `.env` file in the root directory to store your API keys:
+5. Create a `.env` file in the `backend/` directory to store your API keys:
    ```env
    GEMINI_API_KEY=your_gemini_api_key_here
    ```
    *(If no API key is provided, the chatbot automatically falls back to local rule-based keyword matching.)*
-5. Start the FastAPI server:
+6. Start the FastAPI server:
    ```bash
    python server.py
    ```
@@ -144,7 +154,10 @@ Follow these steps to run both the backend API and frontend Vite dev servers loc
 
 ### Step 2: Frontend Setup (React & Vite)
 
-1. Open a new terminal window in the root directory.
+1. Open a new terminal window and navigate to the `frontend/` directory:
+   ```bash
+   cd frontend
+   ```
 2. Install npm dependencies:
    ```bash
    npm install
