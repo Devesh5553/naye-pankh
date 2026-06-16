@@ -1,4 +1,4 @@
-# 🪶 NayePankh Foundation Portal
+# 🪶 NayePankh Foundation Portal (Prototype)
 
 A comprehensive, bilingual (English & Hindi) digital portal designed for **NayePankh Foundation**—an Uttar Pradesh government-registered NGO (Reg. No: UP/2021/02845612). This platform bridges the gap between donors, volunteers, and administration by providing interactive tools for tax calculations, real-time donation utilization tracking, automated volunteer matching, and an AI-powered conversational assistant.
 
