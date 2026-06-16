@@ -1,0 +1,128 @@
+[
+  {
+    "name": "devesh",
+    "date": "2026-06-01",
+    "amount": 7500.0,
+    "method": "UPI (GPay)",
+    "status": "Successful",
+    "campaignKey": "edu",
+    "email": "devesh@gmail.com"
+  },
+  {
+    "name": "devesh",
+    "date": "2026-05-15",
+    "amount": 1800.0,
+    "method": "UPI (Paytm)",
+    "status": "Successful",
+    "campaignKey": "food",
+    "email": "devesh@gmail.com"
+  },
+  {
+    "name": "Aarav Sharma",
+    "date": "2026-06-01",
+    "amount": 7500.0,
+    "method": "UPI (GPay)",
+    "status": "Successful",
+    "campaignKey": "edu",
+    "email": "aarav@test.com"
+  },
+  {
+    "name": "Aarav Sharma",
+    "date": "2026-05-15",
+    "amount": 1800.0,
+    "method": "UPI (Paytm)",
+    "status": "Successful",
+    "campaignKey": "food",
+    "email": "aarav@test.com"
+  },
+  {
+    "name": "Ramesh Kumar",
+    "date": "2026-06-15",
+    "amount": 15000.0,
+    "method": "UPI (Paytm)",
+    "status": "Successful",
+    "campaignKey": "edu",
+    "email": "ramesh@gmail.com"
+  },
+  {
+    "name": "Shubham Tripathi",
+    "date": "2026-06-14",
+    "amount": 5000.0,
+    "method": "NetBanking",
+    "status": "Successful",
+    "campaignKey": "food",
+    "email": "shubham@gmail.com"
+  },
+  {
+    "name": "Priya Agarwal",
+    "date": "2026-06-12",
+    "amount": 2500.0,
+    "method": "Credit Card",
+    "status": "Successful",
+    "campaignKey": "hygiene",
+    "email": "priya@gmail.com"
+  },
+  {
+    "name": "Dr. Vivek Mishra",
+    "date": "2026-06-10",
+    "amount": 50000.0,
+    "method": "UPI (GPay)",
+    "status": "Successful",
+    "campaignKey": "edu",
+    "email": "vivek@gmail.com"
+  },
+  {
+    "name": "Ankita Gupta",
+    "date": "2026-06-08",
+    "amount": 1000.0,
+    "method": "Debit Card",
+    "status": "Successful",
+    "campaignKey": "hygiene",
+    "email": "ankita@gmail.com"
+  },
+  {
+    "name": "Rajesh Yadav",
+    "date": "2026-06-06",
+    "amount": 12000.0,
+    "method": "UPI (PhonePe)",
+    "status": "Successful",
+    "campaignKey": "edu",
+    "email": "rajesh@gmail.com"
+  },
+  {
+    "name": "Sunita Sharma",
+    "date": "2026-06-05",
+    "amount": 3000.0,
+    "method": "NetBanking",
+    "status": "Pending",
+    "campaignKey": "food",
+    "email": "sunita@gmail.com"
+  },
+  {
+    "name": "Aman Deep",
+    "date": "2026-06-04",
+    "amount": 7500.0,
+    "method": "Credit Card",
+    "status": "Successful",
+    "campaignKey": "edu",
+    "email": "aman@gmail.com"
+  },
+  {
+    "name": "Neha Chaurasia",
+    "date": "2026-06-02",
+    "amount": 4500.0,
+    "method": "UPI (GPay)",
+    "status": "Successful",
+    "campaignKey": "food",
+    "email": "neha@gmail.com"
+  },
+  {
+    "name": "Karan Malhotra",
+    "date": "2026-06-01",
+    "amount": 8000.0,
+    "method": "UPI (Paytm)",
+    "status": "Pending",
+    "campaignKey": "edu",
+    "email": "karan@gmail.com"
+  }
+]

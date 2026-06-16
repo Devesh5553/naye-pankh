@@ -1,0 +1,42 @@
+[
+  {
+    "date": "2026-06-16 20:05",
+    "name": "Shalini Mishra",
+    "phone": "8877665544",
+    "role": "Digital Advocacy Catalyst",
+    "time": "3-5 Hours / Week",
+    "loc": "Remote (WFH)"
+  },
+  {
+    "date": "2026-06-15 11:24",
+    "name": "Amit Trivedi",
+    "phone": "9876543210",
+    "role": "Rural Education Mentor",
+    "time": "Weekend Drives",
+    "loc": "On-field (UP)"
+  },
+  {
+    "date": "2026-06-14 16:40",
+    "name": "Shalini Mishra",
+    "phone": "8877665544",
+    "role": "Digital Advocacy Catalyst",
+    "time": "3-5 Hours / Week",
+    "loc": "Remote (WFH)"
+  },
+  {
+    "date": "2026-06-12 10:15",
+    "name": "Kabir Dev",
+    "phone": "7766554433",
+    "role": "Grassroots Relief Lead",
+    "time": "Weekend Drives",
+    "loc": "On-field (UP)"
+  },
+  {
+    "date": "2026-06-10 14:02",
+    "name": "Ritu Jaiswal",
+    "phone": "9900887766",
+    "role": "Campaign Operations Coordinator",
+    "time": "1-2 Hours / Week",
+    "loc": "Remote (WFH)"
+  }
+]
