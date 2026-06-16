@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useLanguage } from './LanguageContext';
+import { API_BASE_URL } from '../config';
 
 export const ChatbotWidget = () => {
   const { lang, t } = useLanguage();
@@ -48,7 +49,7 @@ export const ChatbotWidget = () => {
     setInputText('');
 
     try {
-      const response = await fetch('http://localhost:8000/api/chatbot/query', {
+      const response = await fetch(`${API_BASE_URL}/api/chatbot/query`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: cleanText, lang })

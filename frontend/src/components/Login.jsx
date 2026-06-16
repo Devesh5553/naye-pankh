@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useLanguage } from './LanguageContext';
+import { API_BASE_URL } from '../config';
 
 export const Login = ({ onLogin, setView }) => {
   const { lang, t } = useLanguage();
@@ -52,7 +53,7 @@ export const Login = ({ onLogin, setView }) => {
     const passVal = loginPassword;
 
     try {
-      const response = await fetch('http://localhost:8000/api/auth/login', {
+      const response = await fetch(`${API_BASE_URL}/api/auth/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username: userVal, password: passVal })
@@ -87,7 +88,7 @@ export const Login = ({ onLogin, setView }) => {
     const pass = regPassword;
 
     try {
-      const response = await fetch('http://localhost:8000/api/auth/register', {
+      const response = await fetch(`${API_BASE_URL}/api/auth/register`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, email, phone, password: pass })

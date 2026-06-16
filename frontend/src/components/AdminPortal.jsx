@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Chart from 'chart.js/auto';
+import { API_BASE_URL } from '../config';
 
 const mockDonations = [
   { name: 'Ramesh Kumar', date: '2026-06-15', amount: 15000, method: 'UPI (Paytm)', status: 'Successful', campaignKey: 'edu' },
@@ -65,7 +66,7 @@ export const AdminPortal = ({ onLogout, setView }) => {
       return;
     }
 
-    fetch('http://localhost:8000/api/botlogs')
+    fetch(`${API_BASE_URL}/api/botlogs`)
       .then(res => res.json())
       .then(data => setBotLogs(data))
       .catch(err => console.error(err));
@@ -76,7 +77,7 @@ export const AdminPortal = ({ onLogout, setView }) => {
     const isAdmin = sessionStorage.getItem('nayepankh_admin_login');
     if (isAdmin !== 'true') return;
 
-    fetch(`http://localhost:8000/api/donations?sort=${donationSort}&status=${donationFilter}&search=${encodeURIComponent(donationSearch)}`)
+    fetch(`${API_BASE_URL}/api/donations?sort=${donationSort}&status=${donationFilter}&search=${encodeURIComponent(donationSearch)}`)
       .then(res => res.json())
       .then(data => setDonations(data))
       .catch(err => console.error(err));
@@ -87,7 +88,7 @@ export const AdminPortal = ({ onLogout, setView }) => {
     const isAdmin = sessionStorage.getItem('nayepankh_admin_login');
     if (isAdmin !== 'true') return;
 
-    fetch(`http://localhost:8000/api/volunteers?sort=${volunteerSort}&search=${encodeURIComponent(volunteerSearch)}`)
+    fetch(`${API_BASE_URL}/api/volunteers?sort=${volunteerSort}&search=${encodeURIComponent(volunteerSearch)}`)
       .then(res => res.json())
       .then(data => setVolunteers(data))
       .catch(err => console.error(err));
@@ -254,11 +255,11 @@ export const AdminPortal = ({ onLogout, setView }) => {
   const handleClearBotLogs = async () => {
     if (window.confirm('Are you sure you want to clear the logs history?')) {
       try {
-        const response = await fetch('http://localhost:8000/api/botlogs/clear', {
+        const response = await fetch(`${API_BASE_URL}/api/botlogs/clear`, {
           method: 'POST'
         });
         if (response.ok) {
-          const res = await fetch('http://localhost:8000/api/botlogs');
+          const res = await fetch(`${API_BASE_URL}/api/botlogs`);
           const data = await res.json();
           setBotLogs(data);
         }

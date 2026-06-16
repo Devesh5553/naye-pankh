@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useLanguage } from './LanguageContext';
 import Chart from 'chart.js/auto';
+import { API_BASE_URL } from '../config';
 
 export const Homepage = ({ user, setView, userModalOpen, setUserModalOpen, onLogout, onRefreshUser }) => {
   const { lang, t } = useLanguage();
@@ -43,7 +44,7 @@ export const Homepage = ({ user, setView, userModalOpen, setUserModalOpen, onLog
     };
 
     try {
-      const response = await fetch('http://localhost:8000/api/donations', {
+      const response = await fetch(`${API_BASE_URL}/api/donations`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(newDonation)
@@ -196,7 +197,7 @@ export const Homepage = ({ user, setView, userModalOpen, setUserModalOpen, onLog
     };
 
     try {
-      const response = await fetch('http://localhost:8000/api/volunteers', {
+      const response = await fetch(`${API_BASE_URL}/api/volunteers`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(newVolunteer)
@@ -227,13 +228,13 @@ export const Homepage = ({ user, setView, userModalOpen, setUserModalOpen, onLog
     if (!user) return;
     
     // Fetch User Donations
-    fetch(`http://localhost:8000/api/donations/user?email=${encodeURIComponent(user.email)}`)
+    fetch(`${API_BASE_URL}/api/donations/user?email=${encodeURIComponent(user.email)}`)
       .then(res => res.json())
       .then(data => setUserDonations(data))
       .catch(err => console.error(err));
 
     // Fetch Volunteers to find matched role
-    fetch('http://localhost:8000/api/volunteers')
+    fetch(`${API_BASE_URL}/api/volunteers`)
       .then(res => res.json())
       .then(volList => {
         const matchedVol = volList.find(v => v.phone === user.phone || v.name === user.name);
